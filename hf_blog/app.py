@@ -35,8 +35,4 @@ def article(id):
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
-    app.run(debug=True)
-=======
     app.run(host='0.0.0.0' ,port=5000 ,debug=True)
->>>>>>> f3776093996bd69db5374bb58246b12b011c33b6
