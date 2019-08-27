@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'hallow haifeng!'
+    return render_template('index.html')
 
 
 @app.route('/login', methods=['post','get'])
@@ -14,7 +14,7 @@ def login():
     if request.method=='GET':
         return render_template('login.html')
     else:
-        name = request.form.get('name')
+        name = request.form.get('username')
         password = request.form.get('password')
         print(name)
         print(password)
