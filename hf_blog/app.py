@@ -23,13 +23,24 @@ def login():
         else:
             return render_template('login.html')
 
-@app.route('/regist',methods=['post', 'get'])
-def regist():
-    phone = request.form.get('phone')
-    password = request.form.get('password')
-    password1 = request.form.get('password1')
 
-    return render_template('regist.html')
+@app.route('/regist/', methods=['GET', 'POST'])
+def regist():
+    if request.method == 'GET':
+        return render_template('regist.html')
+    else:
+        # request.form.get('phone')取的是input标签的name属性
+        phone = request.form.get('username')
+        password = request.form.get('password')
+        password1 = request.form.get('password1')
+        print(phone)
+        print(password)
+        print(password1)
+        if password == password1:
+            return '注册成功'
+        else:
+            return render_template('regist.html')
+
 
 @app.route('/catalogue')
 def catalogue():
