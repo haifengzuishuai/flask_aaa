@@ -15,7 +15,7 @@
         body {
             height: 100%;
             background: #fff url(/static/images/backgroud.png) 50% 50% no-repeat;
-            background-size: cover;
+            background-size: 100% 100%;
         }
 
         .dowebok {
@@ -31,13 +31,14 @@
         }
 
         .logo {
-            width: 104px;
-            height: 104px;
+            width: 0px;
+            height: 0px;
             margin: 50px auto 80px;
             background: url(/static/images/login.png) 0 0 no-repeat;
         }
 
         .form-item {
+            height: 100px;
             position: relative;
             width: 360px;
             margin: 0 auto;
@@ -45,7 +46,7 @@
         }
 
         .form-item input {
-            width: 288px;
+            width: 360px;
             height: 48px;
             padding-left: 70px;
             border: 1px solid #fff;
@@ -160,16 +161,19 @@
             }
         }
     </style>
-    <body>
+    <body style="box-sizing: inherit">
     <form action="" method="post">
         <div class="dowebok">
             <div class="logo"></div>
+            <p style="font-size: 40px;text-align: center">登录</p>
             <div class="form-item">
-                <input id="username" type="text" autocomplete="off" placeholder="邮箱" name="username">
+                <input required="required" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength=11 id="username"
+                       type="text" autocomplete="off" placeholder="邮箱" name="username">
                 <p class="tip">请输入合法的邮箱地址</p>
             </div>
             <div class="form-item">
-                <input id="password" type="password" autocomplete="off" placeholder="登录密码" name="password">
+                <input id="password" type="text" autocomplete="off" placeholder="登录密码" name="password"
+                       required="required" onfocus="this.type='password'">
                 <p class="tip">邮箱或密码不正确</p>
             </div>
             <div class="form-item">

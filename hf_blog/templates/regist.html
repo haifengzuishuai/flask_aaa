@@ -1,210 +1,212 @@
 {% extends "base.html" %}
 {% block title %}注册 - __席海峰的个人blog__{% endblock %}
 {% block content %}
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        height: 100%;
-    }
-
-    body {
-        height: 100%;
-        background: #fff url(/static/images/backgroud.png) 50% 50% no-repeat;
-        background-size: cover;
-    }
-
-    .dowebok {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 430px;
-        height: 550px;
-        margin: -300px 0 0 -215px;
-        border: 1px solid #fff;
-        border-radius: 20px;
-        overflow: hidden;
-    }
-
-    .logo {
-        width: 0px;
-        height: 0px;
-        margin: 50px auto 80px;
-        background: url(/static/images/login.png) 0 0 no-repeat;
-    }
-
-    .form-item {
-        position: relative;
-        width: 360px;
-        margin: 0 auto;
-        padding-bottom: 30px;
-    }
-
-    .form-item input {
-        width: 360px;
-        height: 48px;
-        padding-left: 70px;
-        border: 1px solid #fff;
-        border-radius: 25px;
-        font-size: 18px;
-        color: #fff;
-        background-color: transparent;
-        outline: none;
-    }
-
-    .form-item button {
-        width: 360px;
-        height: 50px;
-        border: 0;
-        border-radius: 25px;
-        font-size: 18px;
-        color: #1f6f4a;
-        outline: none;
-        cursor: pointer;
-        background-color: #fff;
-    }
-
-    #phone {
-        background: url(/static/images/emil.png) 20px 14px no-repeat;
-    }
-
-    #password {
-        background: url(/static/images/password.png) 23px 11px no-repeat;
-    }
-
-    #password1 {
-        background: url(/static/images/password.png) 23px 11px no-repeat;
-    }
-
-    .tip {
-        display: none;
-        position: absolute;
-        left: 20px;
-        top: 52px;
-        font-size: 14px;
-        color: #f50;
-    }
-
-    .reg-bar {
-        width: 360px;
-        margin: 20px auto 0;
-        font-size: 14px;
-        overflow: hidden;
-    }
-
-    .reg-bar .reg {
-        float: left;
-    }
-
-    .reg-bar .forget {
-        float: right;
-    }
-
-    .dowebok ::-webkit-input-placeholder {
-        font-size: 18px;
-        line-height: 1.4;
-        color: #fff;
-    }
-
-    .dowebok :-moz-placeholder {
-        font-size: 18px;
-        line-height: 1.4;
-        color: #fff;
-    }
-
-    .dowebok ::-moz-placeholder {
-        font-size: 18px;
-        line-height: 1.4;
-        color: #fff;
-    }
-
-    .dowebok :-ms-input-placeholder {
-        font-size: 18px;
-        line-height: 1.4;
-        color: #fff;
-    }
-
-    @media screen and (max-width: 500px) {
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
         * {
-            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            background: #fff url(/static/images/backgroud.png) 50% 50% no-repeat;
+            background-size: 100% 100%;
         }
 
         .dowebok {
-            position: static;
-            width: auto;
-            height: auto;
-            margin: 0 30px;
-            border: 0;
-            border-radius: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 430px;
+            height: 550px;
+            margin: -300px 0 0 -215px;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
         .logo {
-            margin: 50px auto;
+            width: 0px;
+            height: 0px;
+            margin: 50px auto 80px;
+            background: url(/static/images/login.png) 0 0 no-repeat;
         }
 
         .form-item {
-            width: auto;
+            position: relative;
+            width: 360px;
+            margin: 0 auto;
+            padding-bottom: 30px;
         }
 
-        .form-item input, .form-item button, .reg-bar {
-            width: 100%;
+        .form-item input {
+            width: 360px;
+            height: 48px;
+            padding-left: 70px;
+            border: 1px solid #fff;
+            border-radius: 25px;
+            font-size: 18px;
+            color: #fff;
+            background-color: transparent;
+            outline: none;
         }
 
-        input:-webkit-autofill {
-            -webkit-box-shadow: 0 0 0 1000px #293d6b inset !important;
-            自动填入后的背景颜色
+        .form-item button {
+            width: 360px;
+            height: 50px;
+            border: 0;
+            border-radius: 25px;
+            font-size: 18px;
+            color: #1f6f4a;
+            outline: none;
+            cursor: pointer;
+            background-color: #fff;
         }
 
-        input:-webkit-autofill {
-            -webkit-text-fill-color: #fff !important;
-        / / 自动填入后的字体颜色
+        #phone {
+            background: url(/static/images/emil.png) 20px 14px no-repeat;
         }
-    }
-</style>
-<body style="box-sizing: inherit">
-<form action="" method="post">
-    <div class="dowebok">
-        <div class="logo"></div>
-        <p style="font-size: 30px;text-align: center">注册</p>
-        <div class="form-item">
-            <input required="required" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength=11 id="phone" type="text"
-                   placeholder="手机号码"
-                   name="username">
-        </div>
-        <div class="form-item">
-            <input required="required" id="password" type="text" placeholder="密   码" name="password"
-                   onfocus="this.type='password'">
-        </div>
-        <div class="form-item">
-            <input required="required" id="password1" type="text" autocomplete="off" placeholder="确认密码" name="password1"
-                   onfocus="this.type='password'">
-        </div>
-        <div class="form-item">
-            <button class="submit">注册</button>
-        </div>
-        {#
+
+        #password {
+            background: url(/static/images/password.png) 23px 11px no-repeat;
+        }
+
+        #password1 {
+            background: url(/static/images/password.png) 23px 11px no-repeat;
+        }
+
+        .tip {
+            display: none;
+            position: absolute;
+            left: 20px;
+            top: 52px;
+            font-size: 14px;
+            color: #f50;
+        }
+
+        .reg-bar {
+            width: 360px;
+            margin: 20px auto 0;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .reg-bar .reg {
+            float: left;
+        }
+
+        .reg-bar .forget {
+            float: right;
+        }
+
+        .dowebok ::-webkit-input-placeholder {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        .dowebok :-moz-placeholder {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        .dowebok ::-moz-placeholder {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        .dowebok :-ms-input-placeholder {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 500px) {
+            * {
+                box-sizing: border-box;
+            }
+
+            .dowebok {
+                position: static;
+                width: auto;
+                height: auto;
+                margin: 0 30px;
+                border: 0;
+                border-radius: 0;
+            }
+
+            .logo {
+                margin: 50px auto;
+            }
+
+            .form-item {
+                width: auto;
+            }
+
+            .form-item input, .form-item button, .reg-bar {
+                width: 100%;
+            }
+
+            input:-webkit-autofill {
+                -webkit-box-shadow: 0 0 0 1000px #293d6b inset !important;
+                {#自动填入后的背景颜色#}
+            }
+
+            input:-webkit-autofill {
+                -webkit-text-fill-color: #fff !important;
+            / / 自动填入后的字体颜色
+            }
+        }
+    </style>
+    <body style="box-sizing: inherit">
+    <form action="" method="post">
+        <div class="dowebok">
+            <div class="logo"></div>
+            <p style="font-size: 40px;text-align: center">注册</p>
+            <div class="form-item">
+                <input required="required" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength=11 id="phone"
+                       type="text"
+                       placeholder="手机号码"
+                       name="username">
+            </div>
+            <div class="form-item">
+                <input required="required" id="password" type="text" placeholder="密   码" name="password"
+                       onfocus="this.type='password'">
+            </div>
+            <div class="form-item">
+                <input required="required" id="password1" type="text" autocomplete="off" placeholder="确认密码"
+                       name="password1"
+                       onfocus="this.type='password'">
+            </div>
+            <div class="form-item">
+                <button class="submit">注册</button>
+            </div>
+            {#
         <div class="reg-bar">#}
             {# <a class="reg" href="javascript:">立即注册</a>#}
             {# <a class="forget" href="javascript:">忘记密码</a>#}
             {#
         </div>
         #}
-    </div>
-</form>
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
-<script>
-    $(function () {
-        $('input').val('');
-        $('#submit').on('click', function () {
-            $('.tip').show()
+        </div>
+    </form>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('input').val('');
+            $('#submit').on('click', function () {
+                $('.tip').show()
+            })
         })
-    })
-</script>
-</body>
+    </script>
+    </body>
 {% endblock %}
 
 
