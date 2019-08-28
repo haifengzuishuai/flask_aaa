@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}登录 - __席海峰的个人blog__{% endblock %}
+{% block title %}注册 - __席海峰的个人blog__{% endblock %}
 {% block content %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
@@ -92,15 +92,6 @@
             overflow: hidden;
         }
 
-        .reg-bar a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .reg-bar a:hover {
-            text-decoration: underline;
-        }
-
         .reg-bar .reg {
             float: left;
         }
@@ -165,20 +156,21 @@
         <div class="dowebok">
             <div class="logo"></div>
             <div class="form-item">
-                <input id="username" type="text" autocomplete="off" placeholder="邮箱" name="username">
-                <p class="tip">请输入合法的邮箱地址</p>
+                <input id="phone" type="text" autocomplete="off" placeholder="手机号码" name="username">
             </div>
             <div class="form-item">
-                <input id="password" type="password" autocomplete="off" placeholder="登录密码" name="password">
-                <p class="tip">邮箱或密码不正确</p>
+                <input id="password" type="password" autocomplete="off" placeholder="密   码" name="password">
             </div>
             <div class="form-item">
-                <button class="submit">登 录</button>
+                <input id="password1" type="password" autocomplete="off" placeholder="确认密码" name="password">
             </div>
-            <div class="reg-bar">
-                <a class="reg" href="regist.html">立即注册</a>
-                <a class="forget" href="javascript:">忘记密码</a>
+            <div class="form-item">
+                <button class="submit">注册</button>
             </div>
+            {#            <div class="reg-bar">#}
+            {#                <a class="reg" href="javascript:">立即注册</a>#}
+            {#                <a class="forget" href="javascript:">忘记密码</a>#}
+            {#            </div>#}
         </div>
     </form>
     <script type="text/javascript" src="/static/js/jquery.min.js"></script>
