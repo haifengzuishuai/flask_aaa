@@ -24,7 +24,7 @@ def login():
             return render_template('login.html')
 
 
-@app.route('/regist/', methods=['GET', 'POST'])
+@app.route('/regist', methods=['GET', 'POST'])
 def regist():
     if request.method == 'GET':
         return render_template('regist.html')
